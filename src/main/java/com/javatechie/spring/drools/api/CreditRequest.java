@@ -10,6 +10,8 @@ public class CreditRequest {
 
     private double rate;
 
+    private String info;
+
     public String getProgramCode() {
         return programCode;
     }
@@ -40,5 +42,17 @@ public class CreditRequest {
 
     public void setRate(double rate) {
         this.rate = rate;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void addInfo(String newInfo) {
+        this.info = String.format("%s \n %s", this.info, newInfo);
     }
 }
