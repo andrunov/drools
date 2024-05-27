@@ -10,6 +10,6 @@ public class RuleFunctions {
     public static String info(final KnowledgeHelper drools, String message) {
 
         String category = drools.getRule().getPackageName() + "." + drools.getRule().getName();
-        return String.format("[RULE]%s %s", category, message);
+        return String.format("%s %s", category, message);
     }
 }
