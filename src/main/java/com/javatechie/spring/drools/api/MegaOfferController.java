@@ -10,12 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class MegaOfferController {
 	@Autowired
 	private KieSession session;
-
 	@PostMapping("/order")
 	public Order orderNow(@RequestBody Order order) {
 		session.insert(order);
 		session.fireAllRules();
 		return order;
+	}
+
+
+
+	@PostMapping("/rate")
+	public CreditRequest rateNow(@RequestBody CreditRequest creditRequest) {
+		session.insert(creditRequest);
+		session.fireAllRules();
+		return creditRequest;
 	}
 
 }
