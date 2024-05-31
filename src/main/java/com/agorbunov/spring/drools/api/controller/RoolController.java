@@ -1,4 +1,4 @@
-package com.agorbunov.spring.drools.api;
+package com.agorbunov.spring.drools.api.controller;
 
 import com.agorbunov.spring.drools.api.logger.RuleLogger;
 import com.agorbunov.spring.drools.api.model.CreditRequest;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MegaOfferController {
+public class RoolController {
 	@Autowired
 	private KieSession session;
 
