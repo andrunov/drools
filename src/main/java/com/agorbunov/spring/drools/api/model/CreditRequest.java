@@ -1,4 +1,4 @@
-package com.javatechie.spring.drools.api;
+package com.agorbunov.spring.drools.api.model;
 
 public class CreditRequest {
 

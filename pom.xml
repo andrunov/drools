@@ -47,10 +47,6 @@
 			<artifactId>drools-compiler</artifactId>
 			<version>${drools-version}</version>
 		</dependency>
-		<dependency><!-- For example app logging: configure in src/java/resources/logback.xml -->
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

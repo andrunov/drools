@@ -1,14 +1,14 @@
-package com.javatechie.spring.drools.api;
+package com.agorbunov.spring.drools.api.logger;
 
 import org.drools.core.spi.KnowledgeHelper;
 
-public class RuleFunctions {
+public class RuleLogger {
     /**
      * Log a debug row from a rule, using the rule’s package and name as the Log4J
      * category.
      */
 
-    protected static StringBuilder INFO = new StringBuilder();
+    public static StringBuilder INFO = new StringBuilder();
 
     public static void info(final KnowledgeHelper drools, String message) {
 

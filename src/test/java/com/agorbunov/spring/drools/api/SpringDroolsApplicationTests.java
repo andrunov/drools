@@ -1,4 +1,4 @@
-package com.javatechie.spring.drools.api;
+package com.agorbunov.spring.drools.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
