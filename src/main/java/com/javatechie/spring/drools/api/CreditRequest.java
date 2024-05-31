@@ -10,6 +10,8 @@ public class CreditRequest {
 
     private double rate;
 
+    private String rateKds;
+
     private String info;
 
     public String getProgramCode() {
@@ -52,7 +54,11 @@ public class CreditRequest {
         this.info = info;
     }
 
-    public void addInfo(String newInfo) {
-        this.info = String.format("%s \n %s", this.info, newInfo);
+    public String getRateKds() {
+        return rateKds;
+    }
+
+    public void setRateKds(String rateKds) {
+        this.rateKds = rateKds;
     }
 }
