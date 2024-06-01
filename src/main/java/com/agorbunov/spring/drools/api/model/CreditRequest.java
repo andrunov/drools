@@ -12,8 +12,6 @@ public class CreditRequest {
 
     private String rateKds;
 
-    private String info;
-
     public String getProgramCode() {
         return programCode;
     }
@@ -44,14 +42,6 @@ public class CreditRequest {
 
     public void setRate(double rate) {
         this.rate = rate;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
     }
 
     public String getRateKds() {

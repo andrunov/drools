@@ -1,7 +1,7 @@
 package com.agorbunov.spring.drools.api.controller;
 
 import com.agorbunov.spring.drools.api.logger.RuleLogger;
-import com.agorbunov.spring.drools.api.model.CreditRequest;
+import com.agorbunov.spring.drools.api.model.Reester;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +13,13 @@ public class RoolController {
 	@Autowired
 	private KieSession session;
 
-	@PostMapping("/rate")
-	public CreditRequest rateNow(@RequestBody CreditRequest creditRequest) {
+	@PostMapping("/creditRequest")
+	public Reester rateNow(@RequestBody Reester reester) {
 		RuleLogger.INFO.setLength(0);
-		session.insert(creditRequest);
+		session.insert(reester.getCreditRequest());
 		session.fireAllRules();
-		creditRequest.setInfo(RuleLogger.INFO.toString());
-		return creditRequest;
+		reester.setInfo(RuleLogger.INFO.toString());
+		return reester;
 	}
 
 }
