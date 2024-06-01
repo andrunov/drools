@@ -3,6 +3,8 @@ package com.agorbunov.spring.drools.api.model;
 public class Reester {
     private CreditRequest creditRequest;
 
+    private CreditProgram creditProgram;
+
     private String info;
 
     private String warning;
@@ -16,6 +18,14 @@ public class Reester {
 
     public void setCreditRequest(CreditRequest creditRequest) {
         this.creditRequest = creditRequest;
+    }
+
+    public CreditProgram getCreditProgram() {
+        return creditProgram;
+    }
+
+    public void setCreditProgram(CreditProgram creditProgram) {
+        this.creditProgram = creditProgram;
     }
 
     public String getInfo() {
