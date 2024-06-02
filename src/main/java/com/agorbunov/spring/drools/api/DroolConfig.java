@@ -23,6 +23,7 @@ public class DroolConfig {
 	private KieFileSystem getKieFileSystem() throws IOException {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
 		kieFileSystem.write(ResourceFactory.newClassPathResource("rates/prog_1_24_01.xls"));
+		kieFileSystem.write(ResourceFactory.newClassPathResource("rates/prog_1_24_02.xls"));
 		return kieFileSystem;
 
 	}
