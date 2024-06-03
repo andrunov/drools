@@ -1,6 +1,7 @@
 package com.agorbunov.spring.drools.api.logger;
 
-import org.drools.core.spi.KnowledgeHelper;
+
+import org.drools.core.rule.consequence.KnowledgeHelper;
 
 public class RuleLogger {
     /**
