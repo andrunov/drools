@@ -18,7 +18,7 @@ public class RoolController {
 	public Reester rateNow(@RequestBody Reester reester) {
 		RuleLogger.INFO.setLength(0);
 		session.insert(reester.getCreditRequest());
-		session.insert(new CreditProgram());
+		session.insert(reester.getCreditProgram());
 		session.fireAllRules();
 		reester.setInfo(RuleLogger.INFO.toString());
 		return reester;

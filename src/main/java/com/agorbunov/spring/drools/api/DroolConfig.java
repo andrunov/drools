@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DroolConfig {
 
-	private KieServices kieServices = KieServices.Factory.get();
+	private final KieServices kieServices = KieServices.Factory.get();
 
 
 	private KieFileSystem getKieFileSystem() throws IOException {
@@ -37,8 +37,7 @@ public class DroolConfig {
 		KieBuilder kb = kieServices.newKieBuilder(getKieFileSystem());
 		kb.buildAll();
 		KieModule kieModule = kb.getKieModule();
-		KieContainer kContainer = kieServices.newKieContainer(kieModule.getReleaseId());
-		return kContainer;
+		return kieServices.newKieContainer(kieModule.getReleaseId());
 
 	}
 
