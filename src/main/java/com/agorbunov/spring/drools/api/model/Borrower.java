@@ -4,7 +4,7 @@ public class Borrower {
 
     private String category;
 
-    private boolean cardSalaryClient;
+    private boolean cardSalary;
 
     public String getCategory() {
         return category;
@@ -14,11 +14,11 @@ public class Borrower {
         this.category = category;
     }
 
-    public boolean isCardSalaryClient() {
-        return cardSalaryClient;
+    public boolean isCardSalary() {
+        return cardSalary;
     }
 
-    public void setCardSalaryClient(boolean cardSalaryClient) {
-        this.cardSalaryClient = cardSalaryClient;
+    public void setCardSalary(boolean cardSalary) {
+        this.cardSalary = cardSalary;
     }
 }

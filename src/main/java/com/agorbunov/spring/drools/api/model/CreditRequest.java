@@ -8,9 +8,9 @@ public class CreditRequest {
 
     private int askTotalCreditQty;
 
-    private double rate;
-
     private String rateKds;
+
+    private Borrower borrower;
 
     public String getProgramCode() {
         return programCode;
@@ -36,19 +36,19 @@ public class CreditRequest {
         this.askTotalCreditQty = askTotalCreditQty;
     }
 
-    public double getRate() {
-        return rate;
-    }
-
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
     public String getRateKds() {
         return rateKds;
     }
 
     public void setRateKds(String rateKds) {
         this.rateKds = rateKds;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
     }
 }
