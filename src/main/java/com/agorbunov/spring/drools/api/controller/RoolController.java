@@ -1,5 +1,6 @@
 package com.agorbunov.spring.drools.api.controller;
 
+import com.agorbunov.spring.drools.api.functions.RateAccount;
 import com.agorbunov.spring.drools.api.logger.RuleLogger;
 import com.agorbunov.spring.drools.api.model.CreditProgram;
 import com.agorbunov.spring.drools.api.model.Reester;
@@ -17,9 +18,13 @@ public class RoolController {
 	@PostMapping("/creditRequest")
 	public Reester rateNow(@RequestBody Reester reester) {
 		RuleLogger.INFO.setLength(0);
+		RateAccount.RATE = 0.0;
 		session.insert(reester.getCreditRequest());
-		session.insert(new CreditProgram());
+		CreditProgram creditProgram = new CreditProgram();
+		session.insert(creditProgram);
 		session.fireAllRules();
+		creditProgram.setRate(RateAccount.RATE);
+		reester.setCreditProgram(creditProgram);
 		reester.setInfo(RuleLogger.INFO.toString());
 		return reester;
 	}

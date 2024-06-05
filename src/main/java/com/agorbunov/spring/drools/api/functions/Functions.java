@@ -8,7 +8,7 @@ public class Functions {
         RuleLogger.info("[Function] getKds - читаем записанную в заявке ставку отсоединения КДС");
         try {
             return Double.parseDouble(creditRequest.getRateKds());
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             RuleLogger.info("Ставка отсоединения КДС не передана или передана некорректно");
         }
         return 0;
