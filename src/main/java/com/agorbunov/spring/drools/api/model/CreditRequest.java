@@ -1,6 +1,14 @@
 package com.agorbunov.spring.drools.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDate;
+import java.util.Date;
+
 public class CreditRequest {
+
+    @JsonFormat(pattern="dd-MMM-yyyy", locale = "en_US")
+    private Date applicDate;
 
     private String programCode;
 
@@ -11,6 +19,14 @@ public class CreditRequest {
     private String rateKds;
 
     private Borrower borrower;
+
+    public Date getApplicDate() {
+        return applicDate;
+    }
+
+    public void setApplicDate(Date applicDate) {
+        this.applicDate = applicDate;
+    }
 
     public String getProgramCode() {
         return programCode;
