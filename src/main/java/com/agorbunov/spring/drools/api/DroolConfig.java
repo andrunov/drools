@@ -13,19 +13,31 @@ import org.kie.api.runtime.KieSession;
 import org.kie.internal.io.ResourceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 @Configuration
 public class DroolConfig {
 
 	private KieServices kieServices = KieServices.Factory.get();
 
-
 	private KieFileSystem getKieFileSystem() throws IOException {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-		kieFileSystem.write(ResourceFactory.newClassPathResource("Ставки/Потребы/prog_1_24_01.xls"));
-		kieFileSystem.write(ResourceFactory.newClassPathResource("Ставки/Потребы/prog_1_24_02.xls"));
+		writeResources("rules/Ставки/Потребы/", kieFileSystem);
+		writeResources("rules/Ставки/Ипотека/", kieFileSystem);
 		return kieFileSystem;
+	}
 
+	private void writeResources(String path, KieFileSystem kieFileSystem) throws IOException {
+		for (Resource file : getRuleFiles(path)) {
+			kieFileSystem.write(ResourceFactory.newClassPathResource(path + file.getFilename(), "UTF-8"));
+		}
+	}
+
+	private Resource[] getRuleFiles(String path) throws IOException {
+		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+		return resourcePatternResolver.getResources("classpath*:" + path + "**/*.*");
 	}
 
 	@Bean
