@@ -19,6 +19,7 @@ public class RoolController {
 	@PostMapping("/creditRequest")
 	public Reester rateNow(@RequestBody Reester reester) {
 		RuleLogger.INFO.setLength(0);
+		RuleLogger.ERROR.setLength(0);
 		RateAccount.RATE = 0.0;
 		CreditRequest creditRequest = reester.getCreditRequest();
 		session.insert(creditRequest);

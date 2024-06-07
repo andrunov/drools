@@ -9,6 +9,7 @@ public class RuleLogger {
      */
 
     public static StringBuilder INFO = new StringBuilder();
+    public static StringBuilder ERROR = new StringBuilder();
 
     public static void info(final KnowledgeHelper drools, String message) {
         String roolInfo = drools.getRule().getPackageName() + "." + drools.getRule().getName();
@@ -17,5 +18,9 @@ public class RuleLogger {
 
     public static void info(String message) {
         INFO.append(String.format("%s\n", message));
+    }
+
+    public static void error(String message) {
+        ERROR.append(String.format("%s \n", message));
     }
 }
