@@ -31,6 +31,7 @@ public class RoolController {
 		creditProgram.setRate(RateAccount.RATE);
 		reester.setCreditProgram(creditProgram);
 		reester.setInfo(RuleLogger.INFO.toString());
+		reester.setError(RuleLogger.ERROR.toString());
 		return reester;
 	}
 
