@@ -1,6 +1,16 @@
 package com.agorbunov.spring.drools.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
+
 public class CreditProgram {
+
+
+    @JsonFormat(pattern="dd-MMM-yyyy", locale = "en_US")
+    private Date date;
+
+    private String programCode;
 
     private double rate;
 
@@ -11,6 +21,22 @@ public class CreditProgram {
     private int minTermNumber;
 
     private int maxTermNumber;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getProgramCode() {
+        return programCode;
+    }
+
+    public void setProgramCode(String programCode) {
+        this.programCode = programCode;
+    }
 
     public double getRate() {
         return rate;

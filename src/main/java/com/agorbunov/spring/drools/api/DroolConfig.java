@@ -26,6 +26,7 @@ public class DroolConfig {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
 		writeResources("rules/Ставки/Потребы/", kieFileSystem);
 		writeResources("rules/Ставки/Ипотека/", kieFileSystem);
+		writeResources("rules/Параметры/", kieFileSystem);
 		return kieFileSystem;
 	}
 
