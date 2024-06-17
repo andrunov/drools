@@ -1,5 +1,5 @@
 package rules.Проверки;
-dialect  "java"
+dialect  "mvel"
 
 import com.agorbunov.spring.drools.api.model.CreditProgram;
 import com.agorbunov.spring.drools.api.model.CreditRequest;
@@ -7,12 +7,15 @@ import com.agorbunov.spring.drools.api.logger.RuleLogger;
 
 rule "Сумма кредита"
 no-loop
-lock-on-active
+
     when
-        $creditProgram : CreditProgram()
-        $creditRequest : CreditRequest(askTotalCreditQty >= $creditProgram.getMaxAmount(), nonStandart == false)
+    //    $creditProgram : CreditProgram() and
+        $creditRequest : CreditRequest(askTotalCreditQty >= 10)
+    //    Reester($creditRequest != null, $creditProgram != null)
+        //$reester : Reester($creditRequest.askTotalCreditQty >= 10)
 
     then
-        RuleLogger.error("Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
-        RuleLogger.info(drools, "Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
+        RuleLogger.error("###");
+       // RuleLogger.error("Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
+       // RuleLogger.info(drools, "Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
 end
