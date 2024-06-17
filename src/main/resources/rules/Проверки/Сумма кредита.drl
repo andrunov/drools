@@ -1,0 +1,18 @@
+package rules.Проверки;
+dialect  "java"
+
+import com.agorbunov.spring.drools.api.model.CreditProgram;
+import com.agorbunov.spring.drools.api.model.CreditRequest;
+import com.agorbunov.spring.drools.api.logger.RuleLogger;
+
+rule "Сумма кредита"
+no-loop
+lock-on-active
+    when
+        $creditProgram : CreditProgram()
+        $creditRequest : CreditRequest(askTotalCreditQty >= $creditProgram.getMaxAmount(), nonStandart == false)
+
+    then
+        RuleLogger.error("Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
+        RuleLogger.info(drools, "Сумма превышает максимально допустимую по данной программе = " + $creditProgram.getMaxAmount());
+end

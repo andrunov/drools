@@ -27,6 +27,7 @@ public class DroolConfig {
 		writeResources("rules/Ставки/Потребы/", kieFileSystem);
 		writeResources("rules/Ставки/Ипотека/", kieFileSystem);
 		writeResources("rules/Параметры/", kieFileSystem);
+		writeResources("rules/Проверки/", kieFileSystem);
 		return kieFileSystem;
 	}
 

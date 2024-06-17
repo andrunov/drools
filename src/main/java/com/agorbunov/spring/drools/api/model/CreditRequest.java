@@ -18,6 +18,8 @@ public class CreditRequest {
 
     private String rateKds;
 
+    private boolean nonStandart;
+
     private Borrower borrower;
 
     public Date getApplicDate() {
@@ -66,5 +68,13 @@ public class CreditRequest {
 
     public void setBorrower(Borrower borrower) {
         this.borrower = borrower;
+    }
+
+    public boolean isNonStandart() {
+        return nonStandart;
+    }
+
+    public void setNonStandart(boolean nonStandart) {
+        this.nonStandart = nonStandart;
     }
 }
